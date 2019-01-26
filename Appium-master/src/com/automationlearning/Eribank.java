@@ -22,7 +22,8 @@ public class Eribank {
 		path = System.getProperty("user.dir");
 		DesiredCapabilities cap = new DesiredCapabilities();
 		cap.setCapability("platformName", "Android");
-		cap.setCapability("deviceName", "Pixel 2 API 28");
+		cap.setCapability("deviceName", "Nexus 5");
+		cap.setCapability("platformVersion", "7.0");
 		cap.setCapability("app", path+"//app//EriBank_1.0.apk");
 		try {
 			driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), cap);
@@ -37,15 +38,15 @@ public class Eribank {
 	
 	{
 		
-		driver.findElementById("android:id/button1").click();
-		Thread.sleep(5000);
+		//driver.findElementById("android:id/button1").click();
+		//Thread.sleep(5000);
           //driver.findElementByAccessibilityId("OK").click();
-		Thread.sleep(5000);
+		//Thread.sleep(5000);
 		driver.findElementById("com.experitest.ExperiBank:id/usernameTextField").click();
-		driver.findElementById("com.experitest.ExperiBank:id/usernameTextField").sendKeys("appium");
+		driver.findElementById("com.experitest.ExperiBank:id/usernameTextField").sendKeys("company");
 		driver.findElementById("com.experitest.ExperiBank:id/passwordTextField").click();
 		driver.findElementById("com.experitest.ExperiBank:id/passwordTextField").sendKeys("company");
-		driver.findElementByAccessibilityId("com.experitest.ExperiBank:id/loginButton").click();
+		driver.findElementById("com.experitest.ExperiBank:id/loginButton").click();
 		Thread.sleep(5000);
 		String text = driver.findElementById("com.experitest.ExperiBank:id/makePaymentButton").getText();
 		if(text.equalsIgnoreCase("Make Payment"))
