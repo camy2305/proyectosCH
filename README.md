@@ -1,2 +1,0 @@
-# proyectosCH
-Repositorio de prueba
